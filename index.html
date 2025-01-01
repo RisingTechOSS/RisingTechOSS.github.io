@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <title>Welcome to risingOS</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      iframe {
+        width: 100%;
+        height: calc(100vh - 64px);
+        border: none;
+      }
+      iframe.footer {
+        height: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav class="white navigation_bar">
+        <div class="nav-wrapper">
+          <div id="navContainer" class="container">
+            <a
+              href="#!"
+              class="brand-logo black-text"
+            >
+              <span onclick="returnToHome();">risingOS</span>
+              <img
+                class="circular_brand_logo"
+                src="https://avatars.githubusercontent.com/u/121661057?s=200&v=4"
+                alt="risingOS Logo"
+                onclick="returnToHome();"
+              />
+              <i id="mobileDropdown" data-target="mobile-dropdown" 
+                class="dropdown-trigger material-icons right">arrow_drop_down</i>
+            </a>
+
+            <ul id="navMenu" class="right hide-on-med-and-down navbar_container">
+              <li>
+                <a
+                  class="dropdown-trigger black-text nav_menu_item"
+                  href="#!"
+                  data-target="discover-dropdown"
+                >
+                  Discover risingOS <i class="material-icons right">arrow_drop_down</i>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="black-text nav_menu_item"
+                  href="https://github.com/RisingTechOSS-devices/official_devices/blob/main/devices.md"
+                  target="_blank"
+                >
+                  Explore devices
+                </a>
+              </li>
+
+              <li class="right-icons">
+                <i class="material-icons black-text"></i>
+                <a
+                  href="https://github.com/RisingTechOSS"
+                  class="btn black white-text source_code_btn"
+                  target="_blank"
+                >
+                  Check us on Github 
+                  <i class="fab fa-github right source_code_icon"></i>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <ul id="discover-dropdown" class="dropdown-content nav_drop_down_content">
+      <li><a class="nav_drop_down_item" href="#discover1">Features</a></li>
+      <li><a class="nav_drop_down_item" href="#discover2">About risingOS</a></li>
+      <li><a class="nav_drop_down_item" 
+        href="https://github.com/RisingTechOSS/risingOS_wiki"
+        target="_blank"
+        >risingOS Wiki
+      </a></li>
+    </ul>
+
+    <ul id="mobile-dropdown" class="dropdown-content nav_drop_down_content">
+      <li><a class="nav_drop_down_item" href="#about1">About risingOS</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a class="nav_drop_down_item" href="#discover1">Discover risingOS</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a class="nav_drop_down_item" 
+        href="https://github.com/RisingTechOSS-devices/official_devices/blob/main/devices.md"
+        target="_blank"
+        >Supported devices
+      </a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a class="nav_drop_down_item" 
+        href="https://github.com/RisingTechOSS/risingOS_wiki"
+        target="_blank"
+        >risingOS wiki
+      </a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li>
+        <a
+          href="https://github.com/RisingTechOSS"
+          class="nav_drop_down_item"
+          target="_blank"
+        >
+          Check us on Github
+        </a>
+      </li>
+    </ul>
+
+    <iframe src="home.html"></iframe>
+
+    <iframe class="footer" src="footer.html"></iframe>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/iframe.js"></script>
+  </body>
+</html>
