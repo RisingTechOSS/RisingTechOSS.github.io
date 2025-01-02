@@ -11,7 +11,7 @@
           --background-color: #f9f9f9;
           --card-background: #ffffff;
           --text-primary: #121212;
-          --text-secondary: #757575;
+          --text-secondary: black;
           --border-radius: 32px;
           --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
@@ -42,7 +42,8 @@
       }
 
       .news-card {
-          background: var(--card-background);
+          background: url("img/bg2.png");
+          background-size: cover;
           border-radius: var(--border-radius);
           box-shadow: var(--box-shadow);
           margin-bottom: 20px;
@@ -59,8 +60,9 @@
       .news-card-header {
           position: relative;
           padding: 20px;
-          background: var(--primary-color);
-          color: #fff;
+          background: url("img/bg2.png");
+          background-size: cover;
+          color: black;
           font-weight: 500;
           font-size: 1.5em;
           display: flex;
@@ -91,13 +93,13 @@
 
       .news-card-footer {
           padding: 15px 20px;
-          background: var(--background-color);
+          background: transparent;
           display: flex;
           justify-content: space-between;
           align-items: center;
           font-size: 0.9em;
           color: var(--text-secondary);
-          border-top: 1px solid #e0e0e0;
+          border: none;
       }
 
       .news-card-footer span {
@@ -115,6 +117,7 @@
           max-width: 200px;
           height: auto;
           margin: 20px auto;
+          border-radius: 22px;
       }
 
       @media (max-width: 768px) {
@@ -137,8 +140,22 @@
     <script>
         const newsData = [
             {
-                title: "Introducing Now Bar Feature!",
-                content: "Inspired from OneUI 7.0, minimize lockscreen clutter with now bar feature!",
+                "title": "Media Dialog Revamped: Accessibility Meets Functionality!",
+                "content": "The revamped media dialog introduces a seek bar, track time display, and enhanced media controls, designed to improve accessibility and provide a smoother user experience.",
+                "date": "January 2, 2025",
+                "author": "risingOS Team",
+                "image": "img/revamped_media_dialog_screenshot.jpg"
+            },
+            {
+                title: "Peek Display Revamped: Minimalism Meets Elegance",
+                content: "Inspired by MyUI and Android 16's minimalist notifications, Peek Display lets you enjoy your wallpaper like never before.",
+                date: "January 2, 2025",
+                author: "risingOS team",
+                image: "img/peek_display_screenshot.jpg"
+            },
+            {
+                title: "Now Bar Introduced: Lock Screen Simplified",
+                content: "Inspired by OneUI 7.0, the Now Bar minimizes lockscreen clutter, keeping things minimal.",
                 date: "January 2, 2025",
                 author: "risingOS team",
                 image: "img/now_bar_screenshot.png"
@@ -172,7 +189,7 @@
             card.innerHTML = `
                 <div class="news-card-header collapsed">
                     <span>${news.title}</span>
-                    <i class="material-icons white-text">expand_more</i>
+                    <i class="material-icons black-text">expand_more</i>
                 </div>
                 <div class="news-card-content" style="display: none;">
                     <p>${news.content}</p>
