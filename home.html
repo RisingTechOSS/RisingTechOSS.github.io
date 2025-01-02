@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
-
+<div class="scroll-container" id="scroll-container">
 <!-- highlight card -->
 <div class="feature_highlight_card_container">
   <img class="feature_highlight_card_bg" 
@@ -57,4 +57,14 @@
     <i class="material-icons">arrow_forward</i>
   </button> 
 </div>
+</div>
+<script>
+  const scrollContainer = document.getElementById('scroll-container');
+  scrollContainer.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    if (e.deltaY !== 0) {
+      scrollContainer.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+</script>
 </html>

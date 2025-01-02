@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
       constrainWidth: false,
       alignment: 'left'
     });
-    const mobileDropdown = document.querySelectorAll("#mobileDropdown");
-    M.Dropdown.init(mobileDropdown, {
-      hover: false,
-      coverTrigger: false,
-      constrainWidth: false,
-      alignment: 'left'
+    const mobileMenuElems = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(mobileMenuElems, {
+      edge          : 'right',
+      closeOnClick  : true,
+      draggable     : true
     });
 });

@@ -36,47 +36,33 @@
                 alt="risingOS Logo"
                 onclick="returnToHome();"
               />
-              <i id="mobileDropdown" data-target="mobile-dropdown" 
-                class="dropdown-trigger material-icons right">arrow_drop_down</i>
             </a>
 
             <ul id="navMenu" class="right hide-on-med-and-down navbar_container">
               <li>
-                <a
-                  class="black-text nav_menu_item"
-                  href="#news"
-                >
-                  risingOS news
+                <a class="black-text nav_menu_item" href="#news">risingOS news</a>
+              </li>
+              <li>
+                <a class="black-text nav_menu_item dropdown-trigger" 
+                   data-target="discover-dropdown" 
+                   href="#!">
+                   Discover risingOS 
+                   <i class="material-icons right">arrow_drop_down</i>
                 </a>
               </li>
               <li>
-                <a
-                  class="dropdown-trigger black-text nav_menu_item"
-                  href="#!"
-                  data-target="discover-dropdown"
-                >
-                  Discover risingOS <i class="material-icons right">arrow_drop_down</i>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="black-text nav_menu_item"
-                  href="#devices"
-                >
-                  Explore devices
-                </a>
+                <a class="black-text nav_menu_item" href="#devices">Explore devices</a>
               </li>
               <li class="right-icons">
                 <i class="material-icons black-text"></i>
-                <a
-                  href="#download"
-                  class="btn black white-text source_code_btn"
-                >
+                <a href="#download" class="btn black white-text source_code_btn">
                   Download now
+                  <i class="material-icons">arrow_forward</i>
                 </a>
               </li>
             </ul>
 
+            <a href="#" data-target="mobile-side-menu" id="sideNavbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>
         </div>
       </nav>
@@ -91,38 +77,16 @@
       </a></li>
     </ul>
 
-    <ul id="mobile-dropdown" class="dropdown-content nav_drop_down_content">
-      <li><a class="nav_drop_down_item" href="#about1">About risingOS</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a class="nav_drop_down_item" href="#discover1">Discover risingOS</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a class="nav_drop_down_item" 
-        href="#devices"
-        >Explore devices
-      </a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a class="nav_drop_down_item" 
-        href="#news"
-        >risingOS news
-      </a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a class="nav_drop_down_item" 
-        href="#wiki"
-        >risingOS wiki
-      </a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li>
-        <a
-          href="#download"
-          class="nav_drop_down_item"
-        >
-          Download now
-        </a>
-      </li>
+    <ul id="mobile-side-menu" class="sidenav">
+      <li><a href="#about1">About risingOS</a></li>
+      <li><a href="#discover1">Discover risingOS</a></li>
+      <li><a href="#devices">Explore devices</a></li>
+      <li><a href="#news">risingOS news</a></li>
+      <li><a href="#wiki">risingOS wiki</a></li>
+      <li><a href="#download">Download now</a></li>
     </ul>
 
     <iframe src="home.html"></iframe>
-
     <iframe class="footer" src="footer.html"></iframe>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

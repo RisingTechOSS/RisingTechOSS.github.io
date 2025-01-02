@@ -11,21 +11,26 @@
       padding: 20px;
       margin: 0;
     }
+  
     .markdown-content {
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.6;
     }
+  
     .toc {
       margin-bottom: 20px;
       padding: 16px;
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       overflow-x: auto;
       gap: 8px;
       justify-content: center;
       align-items: center;
+      max-width: 100%;
+      box-sizing: border-box;
     }
+  
     .toc a {
       text-decoration: none;
       font-weight: 500;
@@ -34,15 +39,19 @@
       color: black;
       border-radius: 22px;
       transition: background-color 0.3s, transform 0.3s;
+      white-space: nowrap;
     }
+  
     .toc a:hover {
       background: url("img/bg2.png");
       transform: translateY(-2px);
     }
+  
     .toc a.active {
       background-color: #03dac6;
       color: #000000;
     }
+  
     .highlighted {
       background-color: #e1f5fe;
       padding: 10px;
@@ -51,7 +60,20 @@
       padding-right: 24px;
       display: inline-block;
     }
-  </style>
+
+    @media (max-width: 600px) {
+      .toc {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+  
+      .toc a {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+    }
+  </style>  
 </head>
 <body>
   <div class="toc" id="table-of-contents"></div>
