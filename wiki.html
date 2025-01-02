@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="scripts/markdown_loader.js"></script>
+  <style>
+    body {
+      padding: 20px;
+      margin: 0;
+    }
+    .markdown-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="markdown-content" id="markdown-content"></div>
+  <script>
+    const markdownUrl = "https://raw.githubusercontent.com/RisingTechOSS/risingOS_wiki/refs/heads/fifteen/README.md";
+    const containerId = "markdown-content";
+    loadMarkdown(markdownUrl, containerId);
+  </script>
+</body>
+</html>

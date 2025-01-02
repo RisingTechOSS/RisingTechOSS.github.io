@@ -4,7 +4,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 :root {
-  --about_us_header_padding_top: 0px;
   --feature_card_max_width: 800px;
 }
 
@@ -14,6 +13,25 @@ body {
 
 h1, h2, h3 {
   font-family: 'Google Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .headline_center_text {
@@ -170,17 +188,13 @@ h1, h2, h3 {
   left: 4%;
   width: 100%;
   z-index: 1;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 80px;
 }
 
 .feature_highlight_card_text {
   color: white;
-}
-
-.feature_highlight_card_supported_devices_text {
-  color: black;
 }
 
 .main_highlight_text {
@@ -259,9 +273,10 @@ h1, h2, h3 {
 
 .features_title_text {
   top: 0%;
-  left: 0px;
+  left: 0%;
   font-size: 2rem;
   line-height: 2rem;
+  text-align: center;
 }
 
 .about_us_text {
@@ -274,35 +289,29 @@ h1, h2, h3 {
   max-width: 600px;
 }
 
-.about_us_text_core_title {
-  top: 32%;
-  padding: 20px
-}
-
-.about_us_text_core {
-  top: 42%;
-}
-
-.about_us_text_story_title {
-  top: 64%;
-}
-
-.about_us_text_story {
-  top: 72%;
-}
-
 .feature_highlight_card_container_about {
   min-height: 1300px;
 }
 
-.about_us_header{
-  padding-top: var(--about_us_header_padding_top);
+.about-us-container {
+  width: 100%;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
+.about_us_header {
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+
+.about-us-container p {
+  max-width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
   :root {
     --feature_card_max_width: 320px;
-    --about_us_header_padding_top: 120px;
   }
 
   #risingVersionCard,

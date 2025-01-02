@@ -1,99 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+  <style>
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      width: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .feature_highlight_card_container {
+      margin-right: 100px;
+      min-width: 300px;
+      user-select: text; 
+      cursor: grab;
+    }
+
+    .feature_highlight_card_container:first-child {
+      margin-left: 64px;
+    }
+  </style>
 </head>
-
-<!-- Personalize -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-      Personalize your device.
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/personalize.png"
-  />
-</div>
-
-<!-- lockscreen -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-      Lockscreen<br>customizations
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/lockscreen.png" 
-  />
-</div>
-
-<!-- themes -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-      Themes
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/themes.png" 
-  />
-</div>
-
-
-<!-- gestures -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-      Gestures
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/gestures.png"
-  />
-</div>
-
-<!-- Security -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-      Security
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/securtiy.png"
-  />
-</div>
-
-<!-- QuickSwitch -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-    QuickSwitch
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/quickswitch.png"
-  />
-</div>
-
-<!-- More -->
-<div class="feature_highlight_card_container feature_highlight_card_container_showcase">
-  <img class="feature_highlight_card_bg" 
-    src="img/bg.png"
-  />
-  <h1 class="feature_highlight_card_text_base features_title_text">
-    And many more...
-  </h1>
-  <img class="main_highlight_card features_card_img" 
-    src="img/more.png"
-  />
-</div>
+<body>
+  <div class="scroll-container" id="scroll-container">
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        Personalize<br>your device.
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/personalize.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg6.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        Lockscreen<br>customizations
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/lockscreen.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg2.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        Themes
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/themes.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg5.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        Gestures
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/gestures.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg4.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        Security
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/securtiy.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg6.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        QuickSwitch
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/quickswitch.png" />
+    </div>
+    <div class="feature_highlight_card_container">
+      <img class="feature_highlight_card_bg" src="img/bg7.png" />
+      <h1 class="feature_highlight_card_text_base features_title_text">
+        And more...
+      </h1>
+      <img class="main_highlight_card features_card_img" src="img/more.png" />
+    </div>
+  </div>
+</body>
+<script>
+  const scrollContainer = document.getElementById('scroll-container');
+  scrollContainer.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    if (e.deltaY !== 0) {
+      scrollContainer.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+</script>
 </html>
