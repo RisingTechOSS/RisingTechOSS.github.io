@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+      :root {
+          --primary-color: #508b55;
+          --secondary-color: black;
+          --background-color: #f9f9f9;
+          --card-background: #ffffff;
+          --text-primary: #121212;
+          --text-secondary: #757575;
+          --border-radius: 32px;
+          --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+          margin: 0;
+          padding: 0;
+          background-color: var(--background-color);
+          color: var(--text-primary);
+      }
+
+      .news-container {
+          max-width: 900px;
+          margin: 40px auto;
+          padding: 20px;
+      }
+
+      h1 {
+          text-align: center;
+          color: var(--text-primary);
+          font-weight: 700;
+          font-size: 2.5em;
+      }
+      
+      p {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .news-card {
+          background: var(--card-background);
+          border-radius: var(--border-radius);
+          box-shadow: var(--box-shadow);
+          margin-bottom: 20px;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+      }
+
+      .news-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .news-card-header {
+          position: relative;
+          padding: 20px;
+          background: var(--primary-color);
+          color: #fff;
+          font-weight: 500;
+          font-size: 1.5em;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .news-card-header i {
+          font-size: 24px;
+          transition: transform 0.3s ease;
+      }
+
+      .news-card-header.collapsed i {
+          transform: rotate(0deg);
+      }
+
+      .news-card-header.expanded i {
+          transform: rotate(180deg);
+      }
+
+      .news-card-content {
+          padding: 20px;
+          line-height: 1.7;
+          color: var(--text-secondary);
+          font-size: 1.1em;
+          display: none;
+      }
+
+      .news-card-footer {
+          padding: 15px 20px;
+          background: var(--background-color);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.9em;
+          color: var(--text-secondary);
+          border-top: 1px solid #e0e0e0;
+      }
+
+      .news-card-footer span {
+          display: flex;
+          align-items: center;
+      }
+
+      .material-icons {
+          font-size: 18px;
+          margin-right: 5px;
+      }
+
+      .news_image_snapshot {
+          display: block;
+          max-width: 200px;
+          height: auto;
+          margin: 20px auto;
+      }
+
+      @media (max-width: 768px) {
+          h1 {
+              font-size: 2em;
+          }
+
+          .news-card-content {
+              font-size: 1em;
+          }
+      }
+  </style>
+</head>
+<body>
+    <div class="news-container">
+        <h1>Stay updated with our latest news</h1>
+        <p>Discover the latest developments and announcements in our journey to innovation.</p>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                title: "Introducing Now Bar Feature!",
+                content: "Inspired from OneUI 7.0, minimize lockscreen clutter with now bar feature!",
+                date: "January 2, 2025",
+                author: "risingOS team",
+                image: "img/now_bar_screenshot.png"
+            },
+            {
+                title: "Introducing risingOS v6.1!",
+                content: "We're excited to announce the release of risingOS v6.1! This update brings a lot of new features, fixes, and enhancements.",
+                date: "January 2, 2025",
+                author: "The risingOS Team",
+                image: ""
+            },
+            {
+                title: "Happy New Year - Cheers to New Beginnings!",
+                content: "As we embrace a fresh start, we’re filled with gratitude and optimism for what lies ahead.",
+                date: "January 1, 2025",
+                author: "risingOS team",
+                image: ""
+            },
+            {
+                title: "End of Year Highlights",
+                content: "2024 was a year of incredible growth and achievements. Thank you for being part of our journey.",
+                date: "December 31, 2024",
+                author: "risingOS team",
+                image: ""
+            }
+        ];
+
+        function createNewsCard(news) {
+            const card = document.createElement('div');
+            card.classList.add('news-card');
+            card.innerHTML = `
+                <div class="news-card-header collapsed">
+                    <span>${news.title}</span>
+                    <i class="material-icons white-text">expand_more</i>
+                </div>
+                <div class="news-card-content" style="display: none;">
+                    <p>${news.content}</p>
+                    ${news.image ? `<img class="news_image_snapshot" src="${news.image}">` : ''}
+                    <div class="news-card-footer">
+                        <span><i class="material-icons">calendar_today</i> ${news.date}</span>
+                        <span><i class="material-icons">person</i> ${news.author}</span>
+                    </div>
+                </div>
+            `;
+
+            document.querySelector('.news-container').appendChild(card);
+
+            card.querySelector('.news-card-header').addEventListener('click', () => {
+                const content = card.querySelector('.news-card-content');
+                const isExpanded = card.querySelector('.news-card-header').classList.contains('expanded');
+                document.querySelectorAll('.news-card-header').forEach(h => {
+                    h.classList.remove('expanded');
+                    h.classList.add('collapsed');
+                    h.nextElementSibling.style.display = 'none';
+                });
+                if (isExpanded) {
+                    card.querySelector('.news-card-header').classList.remove('expanded');
+                    card.querySelector('.news-card-header').classList.add('collapsed');
+                    content.style.display = 'none';
+                } else {
+                    card.querySelector('.news-card-header').classList.add('expanded');
+                    card.querySelector('.news-card-header').classList.remove('collapsed');
+                    content.style.display = 'block';
+                }
+            });
+        }
+
+        newsData.forEach(news => {
+            createNewsCard(news);
+        });
+    </script>
+</body>
+</html>
