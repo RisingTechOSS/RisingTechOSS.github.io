@@ -2,9 +2,10 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
-  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@material/web-components@0.28.1/dist/mdc-web.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="scripts/markdown_loader.js"></script>
+  <link rel="stylesheet" href="styles/styles.css" />
   <style>
     body {
       padding: 20px;
@@ -15,14 +16,78 @@
       margin: 0 auto;
       line-height: 1.6;
     }
+    .toc {
+      margin-bottom: 20px;
+      padding: 16px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+    .toc a {
+      text-decoration: none;
+      font-weight: 500;
+      padding: 12px 16px;
+      background: url("img/bg.png");
+      color: black;
+      border-radius: 22px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .toc a:hover {
+      background: url("img/bg2.png");
+      transform: translateY(-2px);
+    }
+    .toc a.active {
+      background-color: #03dac6;
+      color: #000000;
+    }
+    .highlighted {
+      background-color: #e1f5fe;
+      padding: 10px;
+      border-radius: 22px;
+      padding-left: 24px;
+      padding-right: 24px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
+  <div class="toc" id="table-of-contents"></div>
   <div class="markdown-content" id="markdown-content"></div>
   <script>
     const markdownUrl = "https://raw.githubusercontent.com/RisingTechOSS-devices/official_devices/main/devices.md";
-    const containerId = "markdown-content";
-    loadMarkdown(markdownUrl, containerId);
+    loadMarkdownWithTOC(markdownUrl, "markdown-content", "table-of-contents");
+
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.matches('.toc a')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        highlightSection(targetElement);
+      }
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        const link = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+        if (entry.isIntersecting) {
+          link.classList.add('active');
+          entry.target.classList.add('highlighted');
+        } else {
+          link.classList.remove('active');
+          entry.target.classList.remove('highlighted');
+        }
+      });
+    }, {
+      threshold: 0.5 
+    });
+
+    document.querySelectorAll('h2, h3').forEach(section => {
+      observer.observe(section);
+    });
   </script>
 </body>
 </html>
